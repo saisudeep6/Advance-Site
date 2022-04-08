@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="./css/in.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!-- Minimal example using the CDN -->
+<head>
+  <!-- Include Handsfree.js -->
+  <link rel="stylesheet" href="https://unpkg.com/handsfree@8.0.4/build/lib/assets/handsfree.css" />
+  <script src="https://unpkg.com/handsfree@8.0.4/build/lib/handsfree.js"></script>
+</head>
+
+<body>
+  <div>    
+<script >
+  addEventListener('load', function(){});
+
+      function mousekoordinaten(event) {
+        var x = event.clientX;
+        var y = event.clientY;
+        var str = '('+x+'/'+y+')';
+        document.getElementById('koordinaten').innerHTML = str;
+        window.addEventListener('click', function(){ 
+        document.getElementById('redbox').style.left = x+'px';
+        document.getElementById('redbox').style.top = y+'px';
+        document.getElementById('redbox').style.background = '#f00';
+       }); 
+      }
+
+      addEventListener('mousemove', mousekoordinaten);
+
+</script>
+    <h1>Sample SRS Page View</h1>
+    <h2>pinch two fingers (only index fingure and thumb) to open main page... Like - </h2><img src="https://www.nhsggc.org.uk/media/4034/img_2258.jpg?width=397&height=213"><br>
+    <button class="handsfree-show-when-stopped handsfree-hide-when-loading" onclick="handsfree.start()">Start Detection</button>
+    <button class="handsfree-show-when-loading" disabled>Loading...</button>
+    <button class="handsfree-show-when-started" onclick="handsfree.stop()">Stop Detection</button>
+  </div>
+</body>
+<!-- partial -->
+  <script  src="./js/in.js"></script>
+
+</body>
+</html>
